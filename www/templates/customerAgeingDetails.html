@@ -1,0 +1,25 @@
+<ion-view title="Ageing" id="order" style="background-color:#E1F5FE;">
+	<ion-content padding="false" class="has-header" scroll="true" style="padding:0px;">
+		<div class="list card" style="margin:10px;">
+            <div class="item item-body">
+                <div class="row">
+                	<div class="col col-33">Agent </div><div class="col col-67">: {{agentName}}</div>
+                </div>
+                <div class="row">
+                	<div class="col col-33">Customer </div><div class="col col-67">: {{custName}}</div>
+                </div>
+            </div>
+        </div>
+        <ion-list>
+		  <ion-item ng-repeat="ageing in ageingDetails" ng-class="$index%2 == 0 ? 'even':'odd'">
+		    <table>
+		    	<tr><th>Doc No.</th><td>{{ageing.doc_no}}</td><th>Doc Date</th><td>{{ageing.doc_date}}</td></tr>
+		    	<tr><th>Inv. No.</th><td>{{ageing.gp_no}}</td><th>Inv. Date</th><td>{{ageing.doc_date}}</td></tr>
+		    	<tr><th>Due Date</th><td>{{ageing.due_date}}</td><th>Doc Amt</th><td>{{ageing.doc_amt}}</td></tr>
+		    	<tr><th>OS Age</th><td><span ng-if="ageing.os_30_days > 0">30 Days</span><span ng-if="ageing.os_60_days > 0">60 Days</span><span ng-if="ageing.os_90_days > 0">90 Days</span><span ng-if="ageing.os_120_days > 0">120 Days</span><span ng-if="ageing.os_more_120_days > 0">more that 120 days</span></td><th>OS Amt</th><td><span ng-if="ageing.os_30_days > 0">{{ageing.os_30_days}}</span><span ng-if="ageing.os_60_days > 0">{{ageing.os_60_days}}</span><span ng-if="ageing.os_90_days > 0">{{ageing.os_90_days}}</span><span ng-if="ageing.os_120_days > 0">{{ageing.os_120_days}}</span><span ng-if="ageing.os_more_120_days > 0">{{ageing.os_more_120_days}}</span></td></tr>
+		    	<tr><th>Int Days</th><td>{{ageing.int_days}}</td><th>Int Amt</th><td>{{ageing.int_amt}}</td></tr>
+		    </table>
+		  </ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>

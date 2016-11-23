@@ -1,0 +1,35 @@
+<ion-view title="Login" hide-nav-bar="true" id="page4">
+    <ion-content padding="true" style="background: url(img/2f8pikSBaTW2UjN5oigA_back_img.jpg) no-repeat center;background-size:cover;" class="manual-ios-statusbar-padding">
+        <form id="login-form1" class="list">
+            <div>
+                <div style="text-align:center">
+                    <h2>G-Force</h2>
+                    <p>Gimatex - Factual Oprrating Resource for Customer Experience</p>
+                </div>
+            </div>
+            <div>
+                <img src="img/MzEqe0ORRDC7o3Iuj3v5_login_logo.png" width="50%" height="auto" style="display: block; margin-left: auto; margin-right: auto;">
+            </div>
+            <ion-list id="login-list1">
+                <label class="item item-input" id="login-input1">
+                    <input type="text" placeholder="Username" ng-model="login.username">
+                </label><br/>
+                <label class="item item-input" id="login-input2">
+                    <input type="password" placeholder="Password" ng-model="login.password">
+                </label>
+            </ion-list>
+            <div class="row">
+                <div class="col col-50">
+                    <ion-checkbox>Remember Me</ion-checkbox>
+                </div>
+                <div class="col col-50">
+                    <button id="login-button3" style="color:#000;text-align:right;border-radius:0px 0px 0px 0px;    margin: 0px;    height: 20px;    min-height: 20px;
+    line-height: 8px;" class="button button-light  button-block button-clear">Forgot Password?</button>
+                </div>
+            </div>
+            
+            
+            <button id="login-button1" style="border-radius:0px 0px 0px 0px;" class="button button-positive  button-block" ng-click="login()">LOGIN</button>
+        </form>
+    </ion-content>
+</ion-view>

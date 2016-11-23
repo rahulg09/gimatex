@@ -1,0 +1,19 @@
+<ion-view title="{{title}}" id="pending" style="">
+    
+    <search-bar ng-model="search"></search-bar>
+    <ion-content padding="false" class="has-header" scroll="true" style="padding:0px;">
+            
+            
+    	<div class="row heading"><div class="col col-75 fixed">Customers</div><div class="col col-25 right fixed">Pending Qty</div></div>
+    	
+        <div class="row" ng-repeat="agent in agents | filter:search.txt" ng-class="$index%2 == 0 ? 'even':'odd'" ng-click="orderDetail('{{agent.ageing_summery_cust_code}}', '{{agent.sales_pers_master_sp_name}}', '{{agent.ageing_summery_sales_pers}}', '{{title}}', '{{agent.ageing_summery_product_line}}')"><div class="col col-75">{{agent.sales_pers_master_sp_name}}</div><div class="col col-25 right">{{agent.qty_sum | number:1}}</div></div>
+        <!--<table>
+          <tr class="heading"><th>Agents</th><th class="center">No. Of Orders</th><th class="right">Pending Qty</th></tr>
+          <tr ng-repeat="agent in agents | filter:search.txt"><td>{{agent.sales_pers_master_sp_name}}</td><td class="center">{{agent.no_of_order}}</td><td class="right">{{agent.qty_sum | number:1}}</td></tr>
+        </table>-->
+    	
+    </ion-content>
+</ion-view>
+<ion-footer-bar  class="">
+	<div class="row"><div class="col col-75">Total : </div><div class="col col-25 right">{{total_pending_qty | number:0}}</div></div>
+</ion-footer-bar>

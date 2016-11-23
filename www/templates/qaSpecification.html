@@ -1,0 +1,28 @@
+<ion-view title="QA Specification" id="page1" style="background-color:#E1F5FE;" class="specification">
+	<ion-content padding="true" class="has-header" scroll="true" >
+		<div class="list">
+		  <div class="input-label">
+		      PLY
+		  </div>
+		  <label class="item item-input item-select">
+		    
+		    <select ng-model="qa.myply" ng-change="productType()">
+		      <option >Select PLY</option>
+		      <option ng-repeat="ply in plys">{{ply.quote_ply}}</option>
+		    </select>
+		  </label>
+		  <div class="input-label">
+		      Product Type
+		  </div>
+		  <label class="item item-input item-select">
+		    
+		    <select ng-model="qa.productType" ng-change="getProducts()">
+		      <option >Select Product Type</option>
+		      <option ng-repeat="product in prodTypes">{{product.quote_group_code}}</option>
+		    </select>
+		  </label>
+		</div>
+
+		<div ng-dropdown-multiselect="" options="example13data" selected-model="example13model" extra-settings="example13settings"></div>
+	</ion-content>
+</ion-view>

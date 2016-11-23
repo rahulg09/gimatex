@@ -1,0 +1,81 @@
+<ion-view title="Dashboard" id="page1" style="background-color:#E1F5FE;">
+    <ion-nav-buttons side="left">
+        <img src="img/app_logo.png" style="width: 45px; z-index: 999999999999; position: absolute; margin-left: 0px; top:-1px;">
+    </ion-nav-buttons>
+    <ion-content padding="true" class="has-header" scroll="false" style="padding:0px;">
+        <div>
+            <div class="row">
+                <div class="col col-50">
+                    <div class="list card">
+                        <div class="item item-body">
+                            <img src="img/icc_quote.png">
+                            <p>Insta Quote?</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-50">
+                    <div class="list card" ui-sref="menu.qaSpecification">
+                        <div class="item item-body">
+                            <img src="img/icc_qa_spec.png">
+                            <p>QA Specification</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-50">
+                    <div class="list card" ng-click="pendingOrders()">
+                        <div class="item item-body">
+                            <img src="img/icc_pending_order.png">
+                            <p>Pending Orders</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-50">
+                    <div class="list card" ng-click="receivableAgeing()">
+                        <div class="item item-body">
+                            <img src="img/icc_recievable.png">
+                            <p>Receivable Ageing</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-50">
+                    <div class="list card" ng-click="dispatches()" ui-sref="menu.dispatches">
+                        <div class="item item-body">
+                            <img src="img/icc_dispacte.png">
+                            <p>Dispatches</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-50">
+                    <div class="list card" ui-sref="menu.contacts">
+                        <div class="item item-body">
+                            <img src="img/contact_us.png">
+                            <p>Contact Us</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-50">
+                    <div class="list card" ui-sref="menu.downloads">
+                        <div class="item item-body">
+                            <img src="img/downloads.png">
+                            <p>Downloads</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-50">
+                    <div class="list card">
+                        <div class="item item-body">
+                            <img src="img/icc_sales_schemes.png">
+                            <p>Sales Schemes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,27 @@
+<ion-view title="Receivable Ageing by" id="pending" style="">
+    
+    <search-bar ng-model="search"></search-bar>
+    <ion-content padding="false" class="has-header" scroll="true" style="padding:0px;">
+            
+            <label ng-if="cat1=='products'  && userType==0" class="item item-input item-select prodcuts">
+            
+            <select ng-model="products" ng-init="products='FAB'" ng-change="searchBy(products)">
+              <option value="FAB" selected>FAB</option>
+              <option value="FFAB">FFAB</option>
+              <option value="YARN">YARN</option>
+            </select>
+          </label>
+    	<div class="row heading"><div class="col col-75 fixed" ng-if="cat1=='products' || cat1=='agents'">Agents</div><div class="col col-75 fixed" ng-if="cat1=='customers'">Customers</div><div class="col col-25 right fixed">Pending Qty</div></div>
+    	
+        <div class="row" ng-if="cat1 != 'customers'" ng-repeat="agent in agents | filter:txt" ng-class="$index%2 == 0 ? 'even':'odd'" ng-click="showCustomers('{{agent.ageing_summery_sales_pers}}', '{{agent.sales_pers_master_sp_name}}', '{{cat1}}')"><div class="col col-75">{{agent.sales_pers_master_sp_name}}</div><div class="col col-25 right">{{agent.qty_sum | number:1}}</div></div>
+        <div class="row" ng-if="cat1 == 'customers'" ng-repeat="agent in agents | filter:txt" ng-class="$index%2 == 0 ? 'even':'odd'" ng-click="orderDetails('{{agent.ageing_summery_sales_pers}}', '{{agent.sales_pers_master_sp_name}}', '{{agent.ageing_summery_cust_code}}', '{{agent.agent_name}}', '{{agent.ageing_summery_product_line}}')"><div class="col col-50">{{agent.sales_pers_master_sp_name}}</div><div class="col col-25 center">{{agent.no_of_order}}</div><div class="col col-25 right">{{agent.qty_sum | number:1}}</div></div>
+        <!--<table>
+          <tr class="heading"><th>Agents</th><th class="center">No. Of Orders</th><th class="right">Pending Qty</th></tr>
+          <tr ng-repeat="agent in agents | filter:search.txt"><td>{{agent.sales_pers_master_sp_name}}</td><td class="center">{{agent.no_of_order}}</td><td class="right">{{agent.qty_sum | number:1}}</td></tr>
+        </table>-->
+    	
+    </ion-content>
+</ion-view>
+<ion-footer-bar  class="">
+	<div class="row"><div class="col col-75">Total : </div><div class="col col-25 right">{{total_pending_qty | number:0}}</div></div>
+</ion-footer-bar>
